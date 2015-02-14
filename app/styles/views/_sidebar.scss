@@ -1,0 +1,10 @@
+.sidebar {
+  ul {
+    li.active {
+      background-color: $blue;
+      a {
+        color: white;
+      }
+    }
+  }
+}

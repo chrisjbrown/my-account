@@ -1,0 +1,31 @@
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.error {
+  color: red;
+}
+.divide {
+  border-bottom: $divider;
+}
+
+.wrapper {
+  @include outer-container;
+
+  .sidebar {
+    @include span-columns(2);
+    @include media($mobile) {
+      @include fill-parent();
+    }
+  }
+
+  .primary {
+    @include span-columns(10);
+    @include media($mobile) {
+      @include fill-parent();
+    }
+  }
+
+}

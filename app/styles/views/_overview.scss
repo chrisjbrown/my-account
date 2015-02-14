@@ -1,0 +1,9 @@
+.primary {
+  table {
+    td {
+      &:first-of-type {
+        vertical-align: top;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<header>
+  <h1 class="heading -large">{{ title }}</h1>
+  <div>
+    <span>Wishlist({{ user.wishlistItems.length }})</span>
+    <span>Basket({{ user.basket.length }})</span>
+  </div>
+</header>
+<div>
+  <div class="wishlist">
+    <div class="item divide" ng-repeat="item in user.wishlistItems track by $index">
+      <div class="pull-left">
+        <input type="checkbox" ng-model="item.selected"/>
+      </div>
+      <div>
+        <img src="{{item.image}}"/>
+      </div>
+      <div>
+        <span>Brand: {{item.brand}}</span>
+        <span>Name: {{item.name}}</span>
+        <span>Qty: {{item.qty}}</span>
+        <span>Size: {{item.size}}</span>
+        <span>Price: {{item.price}}</span>
+        <span>Sku: {{item.sku}}</span>
+      </div>
+      <div class="pull-right">
+        <button ng-click="removeFromWishlist(item)">Remove</button>
+        <button ng-click="addToBasket(item)">Add to basket</button>
+      </div>
+    </div>
+    <div class="options">
+      <div class="pull-left">
+        <input ng-change="selectAll()" ng-model="user.selectAllWishlist" type="checkbox"/>Select all
+        <button ng-click="addChecked()">Add selected to basket</button>
+      </div>
+      <div class="pull-right">
+        <button ng-click="removeAll()">Remove all items</button>
+        <button>Email wishlist</button>
+      </div>
+    </div>
+  </div>
+</div>

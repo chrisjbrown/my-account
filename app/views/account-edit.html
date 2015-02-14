@@ -1,0 +1,58 @@
+<header>
+  <h1 class="heading -large">{{ title }}</h1>
+</header>
+<div class="primary">
+  <form name="editForm" ng-submit="saveAccountData(accountForm)">
+    <div class="row">
+      <div class="cell">
+        <label>Salutation:</label>
+        <select name="salutation" ng-model="accountForm.salutation">
+          <option ng-selected="true">Mr.</option>
+          <option>Mrs.</option>
+          <option>Ms.</option>
+        </select>
+      </div>
+      <div class="cell">
+        <label>First name:</label>
+        <input type="text" name="firstName" ng-model="accountForm.firstName"/>
+      </div>
+      <div class="cell">
+        <input type="text" name="initial" ng-model="initial"></input>
+      </div>
+      <div class="cell">
+        <label>Last name:</label>
+        <input type="text" name="lastName" ng-model="accountForm.lastName"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <label>Post code</label>
+        <input type="text" name="postCode" required ng-pattern="dutchAddress" ng-model="accountForm.address.postcode"/>
+        <span class="error" ng-show="editForm.postCode.$invalid">Please supply a valid Dutch address</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <label>Address</label>
+        <input type="text" name="street" ng-model="accountForm.address.street"/>
+      </div>
+      <div class="cell">
+        <label>House number</label>
+        <input type="text" name="houseNumber" ng-model="accountForm.address.number"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <label>Phone</label>
+        <input type="text" name="phone" ng-model="accountForm.telephone"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <label>Date of birth</label>
+        <input type="text" name="dob" ng-model="accountForm. dob"/>
+      </div>
+    </div>
+    <button type="submit" class="pull-right">Save changes</button>
+  </form>
+</div>

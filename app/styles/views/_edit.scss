@@ -1,0 +1,13 @@
+.primary {
+  form {
+    .row {
+      .cell {
+        display: inline-block;
+        select {
+          height: em(40);
+          background-color: white;
+        }
+      }
+    }
+  }
+}

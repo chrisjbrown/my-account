@@ -1,0 +1,22 @@
+{
+  "name": "Chris",
+  "version": "0.0.1",
+  "homepage": "n/a",
+  "authors": [
+    "Chris Brown <chris.jos.brown@gmail.com>"
+  ],
+  "description": "my account",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~3.1.0"
+  }
+}

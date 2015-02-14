@@ -1,0 +1,30 @@
+.wishlist {
+  .item {
+    padding: em(30);
+    img {
+      width: em(100);
+      height: em(150);
+    }
+
+    div {
+      display: inline-block;
+      span {
+        display: block;
+      }
+    }
+  }
+  .options {
+    margin: em(30) 0;
+    div {
+      display: inline-block;
+    }
+  }
+  @include media($mobile) {
+    div {
+      float: none;
+    }
+    button {
+      margin-top: em(10); 
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<header>
+  <h1 class="heading -large">{{ title }}</h1>
+</header>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td>
+          {{ user.firstName }} {{ user.lastName }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          email
+        </td>
+        <td>
+          {{ user.email }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          phone
+        </td>
+        <td>
+          {{ user.telephone }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Date of birth
+        </td>
+        <td>
+          {{ user.dob }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          address
+        </td>
+        <td>
+          <div>{{ user.address.city }}</div>
+          <div>{{ user.address.street }} - {{ user.address.number }}</div>
+          <div>{{ user.address.postcode }}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="pull-right" ui-sref="account.edit">Modify</button>
+</div>
