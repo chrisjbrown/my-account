@@ -4,17 +4,21 @@ var config       = require('../config');
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var gulpif       = require('gulp-if');
-var browserSync  = require('browser-sync');
 var handleErrors = require('../util/handleErrors');
+var browserSync  = require('browser-sync');
+var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('styles', function(){
-  gulp.src(config.styles.src)
+gulp.task('styles', function () {
+
+  return gulp.src(config.styles.src)
     .pipe(sass({
-      includePaths: require('node-refills').includePaths,
-      style: 'compressed',
-      quiet: true
+      sourceComments: global.isProd ? 'none' : 'map',
+      sourceMap: 'sass',
+      outputStyle: global.isProd ? 'compressed' : 'nested'
     }))
+    .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8"))
     .on('error', handleErrors)
     .pipe(gulp.dest(config.styles.dest))
     .pipe(gulpif(browserSync.active, browserSync.reload({ stream: true })));
+
 });

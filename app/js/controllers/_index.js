@@ -1,10 +1,8 @@
 'use strict';
 
 var angular = require('angular');
+var bulk = require('bulk-require');
 
 module.exports = angular.module('app.controllers', []);
 
-// Define the list of controllers here
-require('./AccountCtrl.js');
-require('./EditCtrl.js');
-require('./WishlistCtrl.js');
+bulk(__dirname, ['./**/!(*_index|*.spec).js']);

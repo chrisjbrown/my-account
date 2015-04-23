@@ -7,9 +7,6 @@ $blue: #1f8de2;
 $green: #1fe27b;
 $red: #e21f3f;
 
-//divider
-$divider: 1px solid $background--dark;
-
 // spacing
 $full-space: 40px;
 $half-space: 20px;
@@ -20,14 +17,3 @@ $font-size--sm: 12px;
 $font-size--md: 16px;
 $font-size--lg: 24px;
 $font-size--xl: 32px;
-
-$mobile-size:em(480);
-$tablet-size:720px;
-$desktop-size:em(960);
-$largedesktop-size:em(1050);
-
-// Bourbon Neat Breakpoints
-$mobile: new-breakpoint(max-width $mobile-size 4);
-$tablet: new-breakpoint(max-width $tablet-size 8);
-$desktop: new-breakpoint(min-width $desktop-size 12);
-$largedesktop: new-breakpoint(min-width $largedesktop-size 16);

@@ -4,8 +4,6 @@ module.exports = {
 
   'serverport': 3000,
 
-  'bowerDir': 'bower_components',
-
   'styles': {
     'src' : 'app/styles/**/*.scss',
     'dest': 'build/css'
@@ -21,6 +19,11 @@ module.exports = {
     'dest': 'build/images'
   },
 
+  'fonts': {
+    'src' : ['app/fonts/**/*'],
+    'dest': 'build/fonts'
+  },
+
   'views': {
     'watch': [
       'app/index.html',
@@ -30,13 +33,20 @@ module.exports = {
     'dest': 'app/js'
   },
 
+  'gzip': {
+    'src': 'build/**/*.{html,xml,json,css,js,js.map}',
+    'dest': 'build/',
+    'options': {}
+  },
+
   'dist': {
     'root'  : 'build'
   },
 
   'browserify': {
     'entries'   : ['./app/js/main.js'],
-    'bundleName': 'main.js'
+    'bundleName': 'main.js',
+    'sourcemap' : true
   },
 
   'test': {

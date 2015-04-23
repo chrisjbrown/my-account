@@ -1,18 +1,8 @@
-@import 'bourbon';
-@import "base/base";
-@import 'neat';
-@import 'mixins';
 @import 'vars';
 @import 'typography';
 
-@import 'views/base';
-@import 'views/overview';
-@import 'views/wishlist';
-@import 'views/edit';
-@import 'views/sidebar';
-
 body {
-  font-family: $helvetica;
+  font-family: Helvetica, sans-serif;
   color: $font-color--dark;
   background-color: $background--light;
   padding: $half-space;

@@ -2,7 +2,7 @@
 
 'use strict';
 
-describe('Unit: AccountCtrl', function() {
+describe('Unit: ExampleCtrl', function() {
 
   var ctrl;
 
@@ -12,7 +12,7 @@ describe('Unit: AccountCtrl', function() {
 
     // mock the controller
     angular.mock.inject(function($controller) {
-      ctrl = $controller('AccountCtrl');
+      ctrl = $controller('ExampleCtrl');
     });
   });
 

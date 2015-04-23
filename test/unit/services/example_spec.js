@@ -2,7 +2,7 @@
 
 'use strict';
 
-describe('Unit: AccountService', function() {
+describe('Unit: ExampleService', function() {
 
   var service;
 
@@ -11,8 +11,8 @@ describe('Unit: AccountService', function() {
     angular.mock.module('app');
 
     // mock the service
-    angular.mock.inject(function(AccountService) {
-      service = AccountService;
+    angular.mock.inject(function(ExampleService) {
+      service = ExampleService;
     });
   });
 

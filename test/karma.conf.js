@@ -1,5 +1,8 @@
 'use strict';
 
+var istanbul = require('browserify-istanbul');
+var isparta  = require('isparta');
+
 module.exports = function(config) {
 
   config.set({
@@ -7,19 +10,23 @@ module.exports = function(config) {
     basePath: '../',
     frameworks: ['jasmine', 'browserify'],
     preprocessors: {
-      'app/js/**/*.js': ['browserify']
+      'app/js/**/*.js': ['browserify', 'babel', 'coverage']
     },
     browsers: ['Chrome'],
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
     autoWatch: true,
 
-    plugins: [
-      'karma-jasmine',
-      'karma-bro',
-      'karma-chrome-launcher',
-      'karma-firefox-launcher'
-    ],
+    browserify: {
+      debug: true,
+      transform: [
+        'bulkify',
+        istanbul({
+          instrumenter: isparta,
+          ignore: ['**/node_modules/**', '**/test/**']
+        })
+      ]
+    },
 
     proxies: {
       '/': 'http://localhost:9876/'
@@ -29,6 +36,7 @@ module.exports = function(config) {
 
     files: [
       // 3rd-party resources
+      'node_modules/angular/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
 
       // app-specific code
