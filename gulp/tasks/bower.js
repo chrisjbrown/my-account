@@ -19,4 +19,4 @@ gulp.task('bower', function() {
     .pipe(gulp.dest(config.scripts.dest))
     .pipe(uglify())
     .pipe(gulp.dest(config.scripts.dest));
-})
+});

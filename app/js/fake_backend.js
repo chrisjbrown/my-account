@@ -78,7 +78,7 @@ function FakeBackend($rootScope, $httpBackend) {
     console.log("Getting user data");
     return [200, user, {}];
   });
-  
+
   $httpBackend.whenPOST('/update').respond(function(method,url,data) {
     console.log("Saving user data");
     return [200, user, {}];

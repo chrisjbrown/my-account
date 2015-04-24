@@ -4,6 +4,8 @@ module.exports = {
 
   'serverport': 3000,
 
+  'bowerDir': 'bower_components',
+
   'styles': {
     'src' : 'app/styles/**/*.scss',
     'dest': 'build/css'
